@@ -228,7 +228,7 @@ export default function AdminServicesPage() {
       ) : services.length === 0 ? (
         <div className="bg-background-secondary border border-border rounded-xl p-12 text-center">
           <p className="text-silver">No services yet.</p>
-          <p className="text-silver-dark text-sm mt-1">Click "Add Service" to create your first one.</p>
+          <p className="text-silver-dark text-sm mt-1">Click &quot;Add Service&quot; to create your first one.</p>
         </div>
       ) : (
         <div className="bg-background-secondary border border-border rounded-xl overflow-hidden">

@@ -190,7 +190,7 @@ export default function AdminSlotsPage() {
       ) : slots.length === 0 ? (
         <div className="bg-background-secondary border border-border rounded-xl p-12 text-center">
           <p className="text-silver">No slots for {monthLabel(year, month)}.</p>
-          <p className="text-silver-dark text-sm mt-1">Click "Add Slot" to create one.</p>
+          <p className="text-silver-dark text-sm mt-1">Click &quot;Add Slot&quot; to create one.</p>
         </div>
       ) : (
         <div className="bg-background-secondary border border-border rounded-xl overflow-hidden">
