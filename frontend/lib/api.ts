@@ -1,4 +1,9 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+// In production, NEXT_PUBLIC_API_URL is "/api" (Nginx proxies /api → FastAPI on port 8000).
+// SSR (server-side) needs an absolute URL, so always use localhost:8000 on the server side.
+const BASE_URL =
+  typeof window !== "undefined"
+    ? (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000")
+    : "http://localhost:8000";
 
 type HttpMethod = "GET" | "POST" | "PATCH" | "DELETE";
 

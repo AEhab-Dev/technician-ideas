@@ -1,4 +1,11 @@
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000";
+// In production, NEXT_PUBLIC_API_URL is "/api" (Nginx proxies /api → FastAPI on port 8000).
+// In development, fall back to the direct localhost backend.
+// Server-side Next.js rendering always needs an absolute URL, so we keep the
+// internal localhost address as the SSR fallback regardless of the env value.
+const BASE_URL =
+  typeof window !== "undefined"
+    ? (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:8000")
+    : "http://localhost:8000";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 

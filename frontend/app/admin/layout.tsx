@@ -82,8 +82,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   useEffect(() => {
     if (pathname === "/admin/login") { setChecking(false); return; }
     const token = localStorage.getItem("admin_token");
-    if (!token) { router.replace("/admin/login"); }
-    else { setChecking(false); }
+    if (!token) {
+      // Don't set checking=false here — keep rendering the spinner
+      // until the redirect completes so child pages never mount without a token
+      router.replace("/admin/login");
+    } else {
+      setChecking(false);
+    }
   }, [pathname, router]);
 
   const handleLogout = () => {
