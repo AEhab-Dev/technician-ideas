@@ -1,2 +1,7 @@
 .env
 venv/
+node_modules/
+.neon
+node_modules/
+.env.backup
+.env
