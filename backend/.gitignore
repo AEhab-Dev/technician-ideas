@@ -5,3 +5,8 @@ node_modules/
 node_modules/
 .env.backup
 .env
+__pycache__/
+*.pyc
+neon.ts
+package.json
+package-lock.json
